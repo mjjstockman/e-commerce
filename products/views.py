@@ -18,6 +18,11 @@ def add(request):
     # products = Product.get_object_or_404.all()
     form = ProductForm()
 
+    if request.method == 'POST':
+        form = ProductForm(request.POST)
+        if form.is_valid():
+            form.save()
+
     context = {
         'form': form
     }
