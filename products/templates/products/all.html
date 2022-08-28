@@ -3,6 +3,9 @@
 
 {% block content %}
 
-
+{% for product in products %}
+Name: {{ product.name }}
+Price: {{ product.price }}
+{% endfor %}
 
 {% endblock %}
