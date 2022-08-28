@@ -1,3 +1,11 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
+from .models import Product
 
-# Create your views here.
+def all(request):
+    # products = Product.get_object_or_404.all()
+    products = get_object_or_404(Product)
+
+    context = {
+        'products': products,
+    }
+    return render(request, 'products/all.html', context)
